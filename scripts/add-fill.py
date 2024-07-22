@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# simple fill generator inspired by https://github.com/IHP-GmbH/IHP-Open-DesignLib/tree/main/U_Hawaii_EE628_Spring_2024
+
 import pya
 
 results_dir = "results/ihp-sg13g2/tt-chip/base"
