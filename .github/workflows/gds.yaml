@@ -43,6 +43,10 @@ jobs:
           submodules: recursive
           path: 'orfs'
 
+      - name: Apply platform update
+        run: |
+          tar xvf sg13g2-update.tar.gz -C orfs/flow/platforms/
+
       - name: Run the flow
         working-directory: 'orfs/flow'
         env:
