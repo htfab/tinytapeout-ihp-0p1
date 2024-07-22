@@ -57,6 +57,11 @@ jobs:
         run: |
           make
 
+      - name: Generate fill
+        run: |
+          pip install klayout
+          scripts/add-fill.py
+
       - name: Upload flow results
         uses: actions/upload-artifact@v4
         if: always()
