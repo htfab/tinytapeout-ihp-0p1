@@ -12,6 +12,10 @@ export VERILOG_FILES = $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/tt_top.v \
                        $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p01_wrapper.v \
                        $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p02_wrapper.v \
                        $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p03_wrapper.v \
+                       $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p04_wrapper.v \
+                       $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p05_wrapper.v \
+                       $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p06_wrapper.v \
+                       $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p07_wrapper.v \
                        $(PROJECTS_HOME)/tt_um_chip_rom/src/tt_um_chip_rom.v \
                        $(PROJECTS_HOME)/tt_um_factory_test/src/tt_um_factory_test.v \
                        $(PROJECTS_HOME)/tt_um_urish_simon/src/simon.v \
@@ -21,7 +25,17 @@ export VERILOG_FILES = $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/tt_top.v \
                        $(PROJECTS_HOME)/tt_um_vga_clock/src/fontROM.v \
                        $(PROJECTS_HOME)/tt_um_vga_clock/src/tt_vga_clock.v \
                        $(PROJECTS_HOME)/tt_um_vga_clock/src/vga_clock.v \
-                       $(PROJECTS_HOME)/tt_um_vga_clock/src/VgaSyncGen.v
+                       $(PROJECTS_HOME)/tt_um_vga_clock/src/VgaSyncGen.v \
+                       $(PROJECTS_HOME)/tt_um_wokwi_397140982440144897/src/cells.v \
+                       $(PROJECTS_HOME)/tt_um_wokwi_397140982440144897/src/tt_um_wokwi_397140982440144897.v \
+                       $(PROJECTS_HOME)/tt_um_wokwi_397142450561071105/src/cells.v \
+                       $(PROJECTS_HOME)/tt_um_wokwi_397142450561071105/src/tt_um_wokwi_397142450561071105.v \
+                       $(PROJECTS_HOME)/tt_um_psychogenic_neptuneproportional/src/neptune_tinytapeout_propwindow.v \
+                       $(PROJECTS_HOME)/tt_um_mattvenn_rgb_mixer/src/tt_um_mattvenn_rgb_mixer.v \
+                       $(PROJECTS_HOME)/tt_um_mattvenn_rgb_mixer/src/rgb_mixer.v \
+                       $(PROJECTS_HOME)/tt_um_mattvenn_rgb_mixer/src/debounce.v \
+                       $(PROJECTS_HOME)/tt_um_mattvenn_rgb_mixer/src/pwm.v \
+                       $(PROJECTS_HOME)/tt_um_mattvenn_rgb_mixer/src/encoder.v
 
 export SDC_FILE      = $(DESIGN_HOME)/$(PLATFORM)/$(DESIGN_NICKNAME)/constraint.sdc
 
