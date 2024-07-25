@@ -1,22 +1,22 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
+// Company:
+// Engineer:
+//
 // Create Date: 07/07/2023 09:48:35 PM
-// Design Name: 
+// Design Name:
 // Module Name: vga_timing
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
+// Project Name:
+// Target Devices:
+// Tool Versions:
+// Description:
+//
+// Dependencies:
+//
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
+//
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -33,8 +33,8 @@ module p09_vga_timing(
     output line_pulse,
     output frame_pulse
     );
-    
-    
+
+
     reg [9:0] hor_counter;
     wire hor_at_end = hor_counter == 10'd799;
     always @(posedge clk or negedge nRst)
@@ -43,13 +43,13 @@ module p09_vga_timing(
             hor_counter <= 10'b0;
         end else begin
             if(hor_at_end) begin
-                hor_counter <= 10'b0;            
+                hor_counter <= 10'b0;
             end else begin
                 hor_counter <= hor_counter + 1'b1;
             end
         end
     end
-    
+
     reg [9:0] vert_counter;
     wire vert_at_end = vert_counter == 10'd524;
     always @(posedge clk or negedge nRst)
@@ -62,7 +62,7 @@ module p09_vga_timing(
                     vert_counter <= 10'b0;
                 end else begin
                     vert_counter <= vert_counter + 1'b1;
-                end            
+                end
             end
         end
     end
@@ -126,11 +126,11 @@ module p09_vga_timing(
     end
 
 
-    
+
     assign line_pulse = hor_at_end;
     assign frame_pulse = vert_at_end && line_pulse; // Make sure that the pulse is only one clock cycle wide
     assign hpos = hor_counter;
     assign vpos = vert_counter[8:0];
     assign active = hactive && vactive;
-    
+
 endmodule

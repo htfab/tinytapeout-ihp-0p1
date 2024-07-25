@@ -69,7 +69,7 @@ module tt_um_algofoogle_raybox_zero (
     .o_tex_out0 (uio_out[5]),
     .o_tex_oeb0 (o_tex_oeb0), // Direction control for io[0] (WARNING: OEb, not OE).
     .i_tex_in   (i_tex_in), //NOTE: io[3] is unused, currently.
-    
+
     // Debug/demo signals:
     .i_debug_m  (1'b0), // Map debug overlay
     .i_debug_t  (1'b0), // Trace debug overlay
@@ -101,7 +101,7 @@ module tt_um_algofoogle_raybox_zero (
     1'b1        // uio[0]: tex_csb        OUTPUT.
   };
   // Unused uio output paths:
-  assign uio_out[7:6] = 2'b00; 
+  assign uio_out[7:6] = 2'b00;
   assign uio_out[4:2] = 3'b000;
 
 endmodule

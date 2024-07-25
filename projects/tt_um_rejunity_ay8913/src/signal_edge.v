@@ -17,7 +17,7 @@ module p15_signal_edge(
             previous_signal_state_1 <= signal;
         end
     end
-    
+
     assign on_edge    = on_posedge | on_negedge;
     assign on_posedge = (previous_signal_state_0 != signal &&  signal);
     assign on_negedge = (previous_signal_state_1 != signal && !signal);

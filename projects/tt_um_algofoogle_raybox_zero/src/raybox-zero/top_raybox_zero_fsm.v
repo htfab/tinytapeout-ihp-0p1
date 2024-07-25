@@ -27,8 +27,8 @@ module p08_top_raybox_zero_fsm(
     // output  wire    [23:0]  ones,               // Represents 24 inputs.
 
     // RAW VGA outputs:
-    output  wire            o_hsync,          // 
-    output  wire            o_vsync,          // 
+    output  wire            o_hsync,          //
+    output  wire            o_vsync,          //
     output  wire    [5:0]   o_rgb,            // BBGGRR
 
     // SPI controller for external texture memory:
@@ -42,14 +42,14 @@ module p08_top_raybox_zero_fsm(
     input   wire    [3:0]   i_tex_in,         // This includes i_tex_in[0] which is the above bi-dir IO pad's input path. Maps to SPI io[2:0]. io[3] as yet unused.
 
     // SPI peripheral 1: View vectors:
-    input   wire            i_vec_csb,        // 
-    input   wire            i_vec_sclk,       // 
-    input   wire            i_vec_mosi,       // 
+    input   wire            i_vec_csb,        //
+    input   wire            i_vec_sclk,       //
+    input   wire            i_vec_mosi,       //
 
     // SPI peripheral 2: General registers:
-    input   wire            i_reg_csb,        // 
-    input   wire            i_reg_sclk,       // 
-    input   wire            i_reg_mosi,       // 
+    input   wire            i_reg_csb,        //
+    input   wire            i_reg_sclk,       //
+    input   wire            i_reg_mosi,       //
 
     input   wire            i_debug_vec_overlay,
     input   wire            i_debug_map_overlay,
@@ -215,7 +215,7 @@ module p08_top_raybox_zero_fsm(
         .hpos       (hpos),
         .vpos       (vpos)
     );
-    
+
 endmodule
 
 

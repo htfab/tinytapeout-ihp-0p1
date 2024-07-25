@@ -1,5 +1,5 @@
 /* A RISC-V core designed to use minimal area.
-  
+
    This core module takes instructions and produces output data
  */
 
@@ -74,11 +74,11 @@ module p10_nanoV_cpu #(parameter NUM_REGS=16) (
     wire [11:0] fast_addr_imm = {next_instr[31:25], next_instr[5] ? next_instr[11:9] : next_instr[24:22], 2'b00};
     wire [31:0] fast_addr = {20'h10000, fast_addr_imm};
     assign addr_out = is_fast_addr ? fast_addr : core_data_out;
-    
+
     wire [30:0] reversed_data_out;
     genvar i;
-    generate 
-      for (i=0; i<31; i=i+1) assign reversed_data_out[i] = core_data_out[30-i]; 
+    generate
+      for (i=0; i<31; i=i+1) assign reversed_data_out[i] = core_data_out[30-i];
     endgenerate
     assign data_out = {core_rs2_out,reversed_data_out[30:0]};
 
@@ -120,7 +120,7 @@ module p10_nanoV_cpu #(parameter NUM_REGS=16) (
     wire starting_send_pc = counter[4:3] != 0 && counter < 30;
     wire starting_read_cmd = counter[2] && !counter[1];
     wire starting_instr_out = starting_send_pc ? (is_any_jump ? core_data_out[29] : pc[21]) : starting_read_cmd;
-    
+
     wire [21:0] next_pc = (counter == 31 && ((next_cycle == instr_cycles && read_instr && !first_instr[0]) || (is_normal_mem && cycle == 0))) ? pc + 4 : pc;
 
     wire is_write = instr[5];
@@ -149,7 +149,7 @@ module p10_nanoV_cpu #(parameter NUM_REGS=16) (
         end else begin
             if (take_branch) begin
                 read_instr <= 0;
-                start_instr_stream <= 1;                
+                start_instr_stream <= 1;
                 starting_instr_stream <= 0;
                 start_data_stream <= 0;
                 starting_data_stream <= 0;
@@ -232,7 +232,7 @@ module p10_nanoV_cpu #(parameter NUM_REGS=16) (
         last_data_xfer <= data_xfer;
 
     assign shift_data_out = ((is_jmp || is_normal_mem) && (cycle != 0)) || (is_fast_mem) || (is_branch && cycle[1]);
-    assign spi_out = starting_instr_stream ? starting_instr_out : 
+    assign spi_out = starting_instr_stream ? starting_instr_out :
                      starting_data_stream ?  starting_data_out :
                      is_store ?              core_data_out[23] : 0;
 

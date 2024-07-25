@@ -1,26 +1,26 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
+// Company:
+// Engineer:
+//
 // Create Date: 07/09/2023 07:48:32 PM
-// Design Name: 
+// Design Name:
 // Module Name: ball_logic
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
+// Project Name:
+// Target Devices:
+// Tool Versions:
+// Description:
+//
+// Dependencies:
+//
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
+//
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module p09_game_logic 
+module p09_game_logic
 #(
     parameter INITIAL_BALL_X = 10'd320 - 3'd2,
     parameter INITIAL_BALL_Y = 9'd452 - 3'd2,
@@ -235,13 +235,13 @@ module p09_game_logic
             end
         end
     end
-    
+
     assign ball_x = ball_state_x[10:1];
     assign ball_y = ball_state_y[9:1];
 
     /////////////////////////////////////////////
     // Paddle logic
-    /////////////////////////////////////////////    
+    /////////////////////////////////////////////
     reg [9:0] paddle_state_x;
     // Ignore the bottom bit to account for the velocity of the paddle
     assign paddle_is_at_left_limit = paddle_state_x[9:1] == BORDER_WIDTH >> 1;
@@ -262,7 +262,7 @@ module p09_game_logic
             end
         end
     end
-    
+
     assign paddle_x = paddle_state_x;
 
 endmodule

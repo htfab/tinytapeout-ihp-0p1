@@ -208,7 +208,7 @@ module p08_pov(
       { playerRX,playerRY, facingRX,facingRY, vplaneRX,vplaneRY } <= ready_buffer;
 
     end
-    
+
   end
 
 

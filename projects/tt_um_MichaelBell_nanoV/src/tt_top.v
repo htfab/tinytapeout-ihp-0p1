@@ -51,7 +51,7 @@ module tt_um_MichaelBell_nanoV (
 
     always @(posedge clk)
         spi_mosi <= spi_data_nano;
-    
+
     wire [31:0] data_in;
     wire [31:0] addr_out;
     wire [31:0] data_out;
@@ -61,10 +61,10 @@ module tt_um_MichaelBell_nanoV (
     assign uo_out = output_data;
 
     p10_nanoV_cpu #(.NUM_REGS(16)) nano(
-        .clk(clk), 
+        .clk(clk),
         .rstn(rst_n),
-        .spi_data_in(buffered_spi_in), 
-        .spi_select(spi_select_nano), 
+        .spi_data_in(buffered_spi_in),
+        .spi_select(spi_select_nano),
         .spi_out(spi_data_nano),
         .spi_clk_enable(spi_clk_enable),
         .ext_data_in(data_in),
@@ -81,9 +81,9 @@ module tt_um_MichaelBell_nanoV (
     localparam PERI_UART_STATUS = 5;
 
     reg [2:0] connect_peripheral;
-    
+
     always @(posedge clk) begin
-        if (!rst_n) begin 
+        if (!rst_n) begin
             connect_peripheral <= PERI_NONE;
         end
         else if (is_addr) begin
@@ -102,7 +102,7 @@ module tt_um_MichaelBell_nanoV (
     wire [7:0] uart_rx_data;
     assign data_in[31:8] = 0;
     assign data_in[7:0] = connect_peripheral == PERI_GPIO_OUT ? output_data :
-                          connect_peripheral == PERI_GPIO_IN ? ui_in : 
+                          connect_peripheral == PERI_GPIO_IN ? ui_in :
                           connect_peripheral == PERI_UART ? uart_rx_data :
                           connect_peripheral == PERI_UART_STATUS ? {6'b0, uart_rx_valid, uart_tx_busy} : 0;
 
@@ -115,7 +115,7 @@ module tt_um_MichaelBell_nanoV (
         .uart_txd(uart_txd),
         .uart_tx_en(uart_tx_start),
         .uart_tx_data(uart_tx_data),
-        .uart_tx_busy(uart_tx_busy) 
+        .uart_tx_busy(uart_tx_busy)
     );
 
     p10_uart_rx #(.CLK_HZ(12_000_000), .BIT_RATE(93_750)) i_uart_rx(
@@ -125,7 +125,7 @@ module tt_um_MichaelBell_nanoV (
         .uart_rts(uart_rts),
         .uart_rx_read(connect_peripheral == PERI_UART && is_data_in),
         .uart_rx_valid(uart_rx_valid),
-        .uart_rx_data(uart_rx_data) 
+        .uart_rx_data(uart_rx_data)
     );
 
 endmodule

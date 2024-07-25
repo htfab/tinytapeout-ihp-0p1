@@ -32,5 +32,5 @@ module p08_vga_mux(
     else if (wall_en)                 out = wall_rgb;
     else                              out = bg_rgb;
   end
-  
+
 endmodule

@@ -1,7 +1,7 @@
 // A first-order sigma-delta modulator
 // It resembles a PWM, but actually is a PDM (Pulse Density Modulation)
 // https://en.wikipedia.org/wiki/Pulse-density_modulation
-// 
+//
 // Implementaion based on https://www.fpga4fun.com/PWM_DAC_2.html
 
 module p15_pwm #( parameter VALUE_BITS = 8 ) (

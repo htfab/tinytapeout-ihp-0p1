@@ -20,7 +20,7 @@
 //        ----    --    --    --    --    --          ---
 //       |    | x|  |  |  |  |  |  |  |  |  | x      |    . . .    <- state flip-flop
 //   ----      --    --    --    --    --    --------
-//              ^                             ^  
+//              ^                             ^
 //              |                             |
 //      write 2 to Period register     write 8 to Period register
 //       has an immediate effect,       has an immediate effect,
@@ -28,7 +28,7 @@
 
 module p15_tone #( parameter PERIOD_BITS = 12 ) ( // @TODO: extract counter into a separate model and use in tone, noise & envelope
     input  wire clk,
-    input  wire enable,    
+    input  wire enable,
     input  wire reset,
 
     input  wire [PERIOD_BITS-1:0]  period,

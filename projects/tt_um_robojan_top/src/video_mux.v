@@ -1,22 +1,22 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
+// Company:
+// Engineer:
+//
 // Create Date: 07/09/2023 10:06:41 AM
-// Design Name: 
+// Design Name:
 // Module Name: video_mux
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
+// Project Name:
+// Target Devices:
+// Tool Versions:
+// Description:
+//
+// Dependencies:
+//
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
+//
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -35,10 +35,10 @@ module p09_video_mux(
     input [5:0] lives,
     input lives_en
     );
-    
+
     always @(*)
     begin
-        if (!in_frame) begin // In blanking. Output black to give the screen something to calibrate on. 
+        if (!in_frame) begin // In blanking. Output black to give the screen something to calibrate on.
             out <= 6'b000000;
         end else if (border_en) begin
             out <= border;

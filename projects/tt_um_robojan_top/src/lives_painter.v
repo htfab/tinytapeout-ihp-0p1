@@ -17,7 +17,7 @@ module p09_lives_painter #(
     input [8:0] vpos,
     input [1:0] lives
     );
-    
+
     reg [4:0] lives_x;
     reg [1:0] lives_cntr;
     reg in_lives_row;

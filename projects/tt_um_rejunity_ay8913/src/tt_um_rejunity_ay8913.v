@@ -38,7 +38,7 @@ module tt_um_rejunity_ay8913 #( parameter DA7_DA4_UPPER_ADDRESS_MASK = 4'b0000,
                                                                             // useful to speedup record.py
             2'b10:  clk_master_strobe = clk_counter[$clog2(128)-1:0] == 0;  // div 128, for TinyTapeout5 running 32..50Mhz
             default:
-                    clk_master_strobe = clk_counter[$clog2(8)-1:0] == 0;    // div  8, for standard AY-3-819x 
+                    clk_master_strobe = clk_counter[$clog2(8)-1:0] == 0;    // div  8, for standard AY-3-819x
                                                                             // running on 1.7 MHz .. 2 MHz frequencies
         endcase
     end
@@ -62,7 +62,7 @@ module tt_um_rejunity_ay8913 #( parameter DA7_DA4_UPPER_ADDRESS_MASK = 4'b0000,
     wire cs = (data[7:4] == DA7_DA4_UPPER_ADDRESS_MASK);
     wire latch = bus_latch_reg && cs;
     wire write = bus_write && active;   // NOTE: chip must be in active state
-                                        // in order to accept writes to the register file 
+                                        // in order to accept writes to the register file
 
     localparam REGISTERS = 16;
     reg [3:0] latched_register;
@@ -223,7 +223,7 @@ module tt_um_rejunity_ay8913 #( parameter DA7_DA4_UPPER_ADDRESS_MASK = 4'b0000,
     wire [MASTER_ACCUMULATOR_BITS-1:0] master;
     wire master_overflow;
     assign { master_overflow, master } = volume_A + volume_B + volume_C; // sum all channels
-    assign uo_out[MASTER_OUTPUT_BITS-1:0] = 
+    assign uo_out[MASTER_OUTPUT_BITS-1:0] =
         (master_overflow == 0) ? master[MASTER_ACCUMULATOR_BITS-1 -: MASTER_OUTPUT_BITS] :  // pass highest MASTER_OUTPUT_BITS to the DAC output pins
                                  MASTER_MAX_OUTPUT_VOLUME;                                  // ALSO prevent value wraparound in the master output
 
@@ -255,5 +255,5 @@ module tt_um_rejunity_ay8913 #( parameter DA7_DA4_UPPER_ADDRESS_MASK = 4'b0000,
         .value(master),
         .out(uio_out[7])
         );
-    
+
 endmodule

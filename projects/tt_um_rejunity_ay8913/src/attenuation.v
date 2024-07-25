@@ -2,7 +2,7 @@
 
 // FROM General Instruments AY-3-8910 / 8912 Programmable Sound Generator (PSG) data Manual.
 // Section 3.7 D/A Converter Operation
-// 
+//
 // Steps from the diagram: 1V, .707V, .5V, .303V (?), .25V, .1515V (?), .125V .. (not specified) .. 0V
 
 
@@ -158,7 +158,7 @@ module p15_attenuation #( parameter CONTROL_BITS = 4, parameter VOLUME_BITS = 15
             13: out = `ATLEAST1(MAX_VOLUME * 0.5  );
             12: out = `ATLEAST1(MAX_VOLUME * 0.354);
             11: out = `ATLEAST1(MAX_VOLUME * 0.25 );
-            10: out = `ATLEAST1(MAX_VOLUME * 0.177);   
+            10: out = `ATLEAST1(MAX_VOLUME * 0.177);
             9:  out = `ATLEAST1(MAX_VOLUME * 0.125);
             8:  out = `ATLEAST1(MAX_VOLUME * 0.089);
             7:  out = `ATLEAST1(MAX_VOLUME * 0.063);
@@ -176,7 +176,7 @@ module p15_attenuation #( parameter CONTROL_BITS = 4, parameter VOLUME_BITS = 15
             // 13: out = `ATLEAST1(MAX_VOLUME * 0.5);
             // 12: out = `ATLEAST1(MAX_VOLUME * 0.303);
             // 11: out = `ATLEAST1(MAX_VOLUME * 0.25);
-            // 10: out = `ATLEAST1(MAX_VOLUME * 0.1515);   
+            // 10: out = `ATLEAST1(MAX_VOLUME * 0.1515);
             // 9:  out = `ATLEAST1(MAX_VOLUME * 0.125);
             // 8:  out = `ATLEAST1(MAX_VOLUME * 0.07575);
             // 7:  out = `ATLEAST1(MAX_VOLUME * 0.0625);

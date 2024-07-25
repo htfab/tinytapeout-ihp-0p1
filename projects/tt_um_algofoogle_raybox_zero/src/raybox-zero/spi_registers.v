@@ -115,7 +115,7 @@ module p08_spi_registers(
   reg [SPI_CMD_BITS-1:0]    spi_cmd;
   reg [SPI_BUFFER_LIMIT:0]  spi_buffer; // Receives the SPI data (after the command).
   reg                       spi_done;
-  
+
 
 // ===== MAIN SPI CLOCKED LOGIC =====
 

@@ -25,10 +25,10 @@ module p10_nanoV_mul #(parameter A_BITS=32) (
 
 //`ifdef SIM
 //  `define SIMPLE_MULTIPLY
-//`endif 
+//`endif
 //`ifdef ICE40
 //  `define SIMPLE_MULTIPLY
-//`endif 
+//`endif
 //
 //`ifdef SIMPLE_MULTIPLY
     reg [A_BITS-1:0] accum;

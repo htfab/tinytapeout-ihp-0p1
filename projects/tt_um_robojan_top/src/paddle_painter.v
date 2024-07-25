@@ -1,22 +1,22 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
+// Company:
+// Engineer:
+//
 // Create Date: 07/09/2023 11:43:48 AM
-// Design Name: 
+// Design Name:
 // Module Name: paddle_drawer
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
+// Project Name:
+// Target Devices:
+// Tool Versions:
+// Description:
+//
+// Dependencies:
+//
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
+//
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -24,7 +24,7 @@ module p09_paddle_painter #(
     //                          BBGGRR
     parameter PADDLE_COLOR = 6'b111111,
     parameter PADDLE_SEGMENT_WIDTH = 8,
-    parameter PADDLE_NUM_SEGMENTS = 6, 
+    parameter PADDLE_NUM_SEGMENTS = 6,
     parameter PADDLE_HEIGHT = 9'd8,
     parameter PADDLE_Y =  9'd456
 ) (
@@ -37,7 +37,7 @@ module p09_paddle_painter #(
     input [9:0] x,
     output [2:0] paddle_segment
     );
-    
+
     reg in_paddle_x;
     reg [2:0] paddle_segment_x;
     reg [2:0] paddle_segment_cnt;

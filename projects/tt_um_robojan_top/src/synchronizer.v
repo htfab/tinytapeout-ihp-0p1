@@ -10,7 +10,7 @@ module p09_synchronizer
     input [WIDTH-1:0] in,
     output [WIDTH-1:0] out
 );
-    
+
     reg [WIDTH-1:0] reg1;
     reg [WIDTH-1:0] reg2;
     always @(posedge clk or negedge nRst)

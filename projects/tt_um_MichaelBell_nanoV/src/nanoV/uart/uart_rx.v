@@ -2,9 +2,9 @@
 // Changes Copyright (c) 2023 Michael Bell
 // MIT License
 
-// 
-// Module: uart_rx 
-// 
+//
+// Module: uart_rx
+//
 // Notes:
 // - UART reciever module.
 //
@@ -19,9 +19,9 @@ output wire       uart_rx_valid, // Valid data recieved and available.
 output wire [PAYLOAD_BITS-1:0] uart_rx_data   // The recieved data.
 );
 
-// --------------------------------------------------------------------------- 
+// ---------------------------------------------------------------------------
 // External parameters.
-// 
+//
 
 //
 // Input bit rate of the UART line.
@@ -41,9 +41,9 @@ parameter   PAYLOAD_BITS    = 8;
 // Number of stop bits indicating the end of a packet.
 parameter   STOP_BITS       = 1;
 
-// -------------------------------------------------------------------------- 
+// --------------------------------------------------------------------------
 // Internal parameters.
-// 
+//
 
 //
 // Number of clock cycles per uart bit.
@@ -53,9 +53,9 @@ localparam       CYCLES_PER_BIT     = BIT_P / CLK_P;
 // Size of the registers which store sample counts and bit durations.
 localparam       COUNT_REG_LEN      = 1+$clog2(CYCLES_PER_BIT);
 
-// -------------------------------------------------------------------------- 
+// --------------------------------------------------------------------------
 // Internal registers.
-// 
+//
 
 //
 // Internally latched value of the uart_rxd line. Avoids metastable states.
@@ -83,16 +83,16 @@ localparam FSM_RECV = 2;
 localparam FSM_STOP = 2 + PAYLOAD_BITS;
 localparam FSM_READY = FSM_STOP + STOP_BITS;
 
-// --------------------------------------------------------------------------- 
+// ---------------------------------------------------------------------------
 // Output assignment
-// 
+//
 
 assign uart_rx_valid = fsm_state == FSM_READY;
 assign uart_rx_data = recieved_data;
 
-// --------------------------------------------------------------------------- 
+// ---------------------------------------------------------------------------
 // FSM next state selection.
-// 
+//
 
 wire next_bit     = cycle_counter == CYCLES_PER_BIT[COUNT_REG_LEN-1:0];
 wire mid_bit      = cycle_counter == CYCLES_PER_BIT[COUNT_REG_LEN-1:0] / 2;
@@ -102,7 +102,7 @@ wire mid_bit      = cycle_counter == CYCLES_PER_BIT[COUNT_REG_LEN-1:0] / 2;
 function [3:0] next_fsm_state();
     case(fsm_state)
         FSM_IDLE : next_fsm_state = rxd_reg[0]  ? FSM_IDLE  : FSM_START;
-        
+
         // Only go STOP -> READY on a valid STOP bit.
         FSM_STOP : next_fsm_state = mid_bit     ? (rxd_reg[0] ? FSM_READY : FSM_IDLE) : FSM_STOP;
 
@@ -112,9 +112,9 @@ function [3:0] next_fsm_state();
     endcase
 endfunction
 
-// --------------------------------------------------------------------------- 
+// ---------------------------------------------------------------------------
 // Internal register setting and re-setting.
-// 
+//
 
 //
 // Handle updates to the recieved data register.

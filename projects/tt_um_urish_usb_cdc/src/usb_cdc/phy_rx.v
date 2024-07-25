@@ -8,7 +8,7 @@
 //   - Bit Stuffing removal.
 //   - End-Of-Packet (EOP) detection.
 //   - USB Reset detection.
-// PHY_RX module shall convert bitstream from the USB bus physical receivers 
+// PHY_RX module shall convert bitstream from the USB bus physical receivers
 //   to 8-bit parallel data for the SIE module.
 // PHY_RX module shall manage the 1.5kOhm pull-up resistor on dp line.
 

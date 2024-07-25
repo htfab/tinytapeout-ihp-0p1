@@ -1,22 +1,22 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
+// Company:
+// Engineer:
+//
 // Create Date: 07/09/2023 11:43:48 AM
-// Design Name: 
+// Design Name:
 // Module Name: ball_drawer
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
+// Project Name:
+// Target Devices:
+// Tool Versions:
+// Description:
+//
+// Dependencies:
+//
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
+//
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -36,28 +36,28 @@ module p09_ball_painter(
     input line_pulse,
     input display_active
     );
-        
+
     // Pixel ball positions:
     //      0 1   2 3
     //    T T T T T T R
     // 0  L   X X X   R
     // 1  L X X X X X R
-    //    L X X X X X R 
+    //    L X X X X X R
     // 2  L X X X X X R
     // 3  L   X X X   R
     //    L B B B B B B
-    
+
     // Pixel ball positions:
     //   0 1   2 3
-    // 0   X X X  
+    // 0   X X X
     // 1 X X X X X
     //   X X X X X
     // 2 X X X X X
     // 3   X X X
-    
+
     // Pixel ball colision regions:
     //   0 1   2 3
-    // 0 T T T T R  
+    // 0 T T T T R
     // 1 L       R
     //   L       R
     // 2 L       R
@@ -65,7 +65,7 @@ module p09_ball_painter(
 
     //                        BBGGRR
     parameter BALL_COLOR = 6'b001100;
-    
+
     wire is_ball_line_start = x == hpos;
     wire is_ball_start = display_active && is_ball_line_start && y == vpos;
 
@@ -73,7 +73,7 @@ module p09_ball_painter(
     reg [2:0] ball_y;
     reg is_in_ball_line;
     reg is_in_ball_rows;
-    
+
     wire x0 = ball_x == 0 && is_in_ball_line;
     wire x3 = ball_x == 4 && is_in_ball_line;
     wire y0 = ball_y == 0 && is_in_ball_rows;
@@ -104,7 +104,7 @@ module p09_ball_painter(
             end
         end
     end
-    
+
     // Ball x counter
     always @(posedge clk or negedge nRst)
     begin
@@ -147,8 +147,8 @@ module p09_ball_painter(
                 end
             end
         end
-    end 
-    
+    end
+
     // Ball area
     wire left_lobe = gt_x0 && lt_x2 && gt_y1 && lt_y2;
     wire right_lobe = gt_x1 && lt_x3 && gt_y1 && lt_y2;
@@ -161,6 +161,6 @@ module p09_ball_painter(
     assign in_ball_left = x0 && !y0;
     assign in_ball_bottom = y3 && !x0;
     assign in_ball_right = x3 && !y3;
-    
+
     assign color = BALL_COLOR;
 endmodule

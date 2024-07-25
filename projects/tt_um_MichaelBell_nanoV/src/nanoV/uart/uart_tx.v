@@ -2,9 +2,9 @@
 // Changes Copyright (c) 2023 Michael Bell
 // MIT License
 
-// 
-// Module: uart_tx 
-// 
+//
+// Module: uart_tx
+//
 // Notes:
 // - UART transmitter module.
 //
@@ -18,9 +18,9 @@ input  wire         uart_tx_en  , // Send the data on uart_tx_data
 input  wire [PAYLOAD_BITS-1:0]   uart_tx_data  // The data to be sent
 );
 
-// --------------------------------------------------------------------------- 
+// ---------------------------------------------------------------------------
 // External parameters.
-// 
+//
 
 //
 // Input bit rate of the UART line.
@@ -40,9 +40,9 @@ parameter   PAYLOAD_BITS    = 8;
 // Number of stop bits indicating the end of a packet.
 parameter   STOP_BITS       = 1;
 
-// --------------------------------------------------------------------------- 
+// ---------------------------------------------------------------------------
 // Internal parameters.
-// 
+//
 
 //
 // Number of clock cycles per uart bit.
@@ -52,9 +52,9 @@ localparam       CYCLES_PER_BIT     = BIT_P / CLK_P;
 // Size of the registers which store sample counts and bit durations.
 localparam       COUNT_REG_LEN      = 1+$clog2(CYCLES_PER_BIT);
 
-// --------------------------------------------------------------------------- 
+// ---------------------------------------------------------------------------
 // Internal registers.
-// 
+//
 
 //
 // Internally latched value of the uart_txd line. Helps break long timing
@@ -79,9 +79,9 @@ localparam FSM_SEND = 2;
 localparam FSM_STOP = 2 + PAYLOAD_BITS;
 localparam FSM_END = FSM_STOP + STOP_BITS - 1;
 
-// --------------------------------------------------------------------------- 
+// ---------------------------------------------------------------------------
 // FSM next state selection.
-// 
+//
 
 assign uart_tx_busy = fsm_state != FSM_IDLE;
 assign uart_txd     = txd_reg;
@@ -104,9 +104,9 @@ function [3:0] next_fsm_state(input tx_en);
     end
 endfunction
 
-// --------------------------------------------------------------------------- 
+// ---------------------------------------------------------------------------
 // Internal register setting and re-setting.
-// 
+//
 
 //
 // Handle updates to the sent data register.

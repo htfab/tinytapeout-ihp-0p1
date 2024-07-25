@@ -452,7 +452,7 @@ module p08_wall_tracer #(
           w <= WAITS;
           state <= CalcTexVInit;
         end
-        
+
         // This state is used by shmul to determine inputs for calculating o_texVinit:
         CalcTexVInit: begin
           if (w!=0) begin
@@ -463,7 +463,7 @@ module p08_wall_tracer #(
             o_side_hot <= side;
             o_texu_hot <= texu;
           end
-        end 
+        end
         //SMELL: Multiplier is not in use after TracePrepX/Y so it doesn't actually need its own state... could be used in parallel, in other states.
 
         TraceDone: begin

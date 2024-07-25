@@ -1,5 +1,5 @@
 /* A RISC-V core designed to use minimal area.
-  
+
    This core module takes instructions and produces output data
  */
 
@@ -52,17 +52,17 @@ module p10_nanoV_core #(parameter NUM_REGS=16, parameter REG_ADDR_BITS=4) (
     wire wr_en = alu_write || ((is_jmp || is_mul) && cycle == 1) || is_load_upper || (is_mem && !is_store && (cycle == (is_fast_mem ? 0 : 2)));
     wire wr_next_en = slt_req;
     wire read_through = wr_next_en;
-    p10_nanoV_registers #(.REG_ADDR_BITS(REG_ADDR_BITS), .NUM_REGS(NUM_REGS)) 
+    p10_nanoV_registers #(.REG_ADDR_BITS(REG_ADDR_BITS), .NUM_REGS(NUM_REGS))
         i_registers(clk, rstn, wr_en, wr_next_en, read_through, counter, next_rs1, next_rs2, rs1, rs2, rd, data_rs1, data_rs2, data_rd, data_rd_next);
 
     reg cy;
     wire is_branch_cycle1 = is_branch && cycle[0];
-    wire [3:0] alu_op = (is_jmp || is_branch_cycle1 || is_load_upper || is_mem) ? 4'b0000 : 
+    wire [3:0] alu_op = (is_jmp || is_branch_cycle1 || is_load_upper || is_mem) ? 4'b0000 :
                         is_branch ? {2'b00,instr[14:13]} :
                         {instr[30] && instr[5],instr[14:12]};
     wire alu_select_rs2 = instr[5] && !is_jmp && !is_branch_cycle1 && !is_load_upper && !is_mem;
     wire alu_write = (instr[4:2] == 3'b100) && !is_mul;
-    wire alu_imm = is_jmp ? ((cycle == 0) ? (is_jal ? j_imm[counter] : i_imm[counter]) : (counter == 2)) : 
+    wire alu_imm = is_jmp ? ((cycle == 0) ? (is_jal ? j_imm[counter] : i_imm[counter]) : (counter == 2)) :
                    is_branch ? b_imm[counter] :
                    is_load_upper ? u_imm[counter] :
                    (is_mem && is_store) ? s_imm[counter] :
@@ -102,7 +102,7 @@ module p10_nanoV_core #(parameter NUM_REGS=16, parameter REG_ADDR_BITS=4) (
     assign data_rd = (is_mem && !is_store)  ? (use_ext_data_in ? ext_data_in : stored_data[6]) :
                      (is_mul) ? mul_out :
                      (alu_op[1:0] == 2'b01) ? shifter_out : alu_out;
-    assign branch = cycle == 0 && ((is_jmp && counter == 0) || 
+    assign branch = cycle == 0 && ((is_jmp && counter == 0) ||
                                    (is_branch && last_count && ((instr[14] ? slt : is_equal) ^ instr[12])));
 
     // Various instructions require us to buffer a register
@@ -112,7 +112,7 @@ module p10_nanoV_core #(parameter NUM_REGS=16, parameter REG_ADDR_BITS=4) (
     always @(posedge clk) begin
         if (shift_data_out) begin
             stored_data[31:1] <= stored_data[30:0];
-            stored_data[0] <= is_mem ? (is_store ? data_rs2 : data_in) : 
+            stored_data[0] <= is_mem ? (is_store ? data_rs2 : data_in) :
                               stored_data[31];
         end else if (do_store) begin
             stored_data[31] <= store_data_in;

@@ -125,19 +125,19 @@ module p10_nanoV_registers #(parameter NUM_REGS=16, parameter REG_ADDR_BITS=4) (
                         registers[i][0] <= data_rd;
                     else
                         registers[i][0] <= registers[i][1];
-                    
+
                     if (wr_next_en && rd == i)
                         registers[i][1] <= data_rd_next;
                     else
                         registers[i][1] <= registers[i][2];
-                    
+
                     registers[i][31:2] <= {registers[i][0], registers[i][31:3]};
                 end
 
                 assign reg_access[i] = registers[i];
             end
         end
-    endgenerate 
+    endgenerate
 
     assign data_rs1 = read_through_rs1 ? last_data_rd_next : reg_access[rs1][1];
     assign data_rs2 = read_through_rs2 ? last_data_rd_next : reg_access[rs2][1];

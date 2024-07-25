@@ -1,22 +1,22 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
+// Company:
+// Engineer:
+//
 // Create Date: 07/07/2023 07:53:38 PM
-// Design Name: 
+// Design Name:
 // Module Name: robojan_top
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
+// Project Name:
+// Target Devices:
+// Tool Versions:
+// Description:
+//
+// Dependencies:
+//
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
+//
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -30,7 +30,7 @@ module tt_um_robojan_top (
     input  wire       clk,      // clock
     input  wire       rst_n     // reset_n - low to reset
 );
-    
+
     wire vblank;
     wire hblank;
     wire miso_en;
@@ -60,5 +60,5 @@ module tt_um_robojan_top (
 
     assign uio_oe = {4'b0, 1'b1, 1'b1, 1'b1, miso_en};
     assign uio_out = {4'b0, sound, vblank, hblank, miso};
-    
+
 endmodule

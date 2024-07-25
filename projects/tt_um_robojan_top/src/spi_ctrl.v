@@ -1,22 +1,22 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
+// Company:
+// Engineer:
+//
 // Create Date: 07/30/2023 05:16:47 PM
-// Design Name: 
+// Design Name:
 // Module Name: spi_ctrl
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
+// Project Name:
+// Target Devices:
+// Tool Versions:
+// Description:
+//
+// Dependencies:
+//
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
+//
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -82,7 +82,7 @@ module p09_spi_ctrl
 
     assign stop_game = state == CONTROL && word[0] && word_en;
     assign write_line = state == DATA && word_en;
-    
+
     always @(posedge clk or negedge nRst)
     begin
         if(!nRst) begin
@@ -91,6 +91,6 @@ module p09_spi_ctrl
             shift_line <= write_line;
         end
     end
-    
+
 
 endmodule

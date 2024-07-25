@@ -55,7 +55,7 @@ module p14_gameControl (
 					bird_vert_velocity <= 9'd501;
 					has_flapped <= 1'b1;
 				end
-				else 
+				else
 				begin
 					if(button)
 						has_flapped <= 1'b0;
@@ -85,7 +85,7 @@ module p14_gameControl (
 				game_over <= 1'b0;
 				restart_game <= 1'b1;
 			end
-			else 
+			else
 			begin
 				if(button)
 					has_flapped <= 1'b0;

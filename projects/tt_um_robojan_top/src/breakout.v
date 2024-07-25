@@ -1,29 +1,29 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
+// Company:
+// Engineer:
+//
 // Create Date: 07/07/2023 07:53:38 PM
-// Design Name: 
+// Design Name:
 // Module Name: breakout
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
+// Project Name:
+// Target Devices:
+// Tool Versions:
+// Description:
+//
+// Dependencies:
+//
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
+//
 //////////////////////////////////////////////////////////////////////////////////
 
 
 module p09_breakout
-#(    
+#(
     parameter PADDLE_SEGMENT_WIDTH = 8,
-    parameter PADDLE_NUM_SEGMENTS = 6, 
+    parameter PADDLE_NUM_SEGMENTS = 6,
     parameter NUM_ROWS = 15,
     parameter BORDER_WIDTH = 8, // Must be a power of 2
     parameter INITIAL_BALL_X = 10'd320 - 3'd2,
@@ -66,7 +66,7 @@ module p09_breakout
     p09_synchronizer ss_sync(clk, nRst, ss_pin, ss);
     p09_synchronizer mosi_sync(clk, nRst, mosi_pin, mosi);
 
-    
+
     // Generate the VGA timing
     wire vga_hactive;
     wire [9:0] vga_hpos;
@@ -90,7 +90,7 @@ module p09_breakout
     );
     assign vblank = !vga_vactive;
     assign hblank = !vga_hactive;
-    
+
     // Video mux
     wire [5:0] video_out;
     wire [5:0] border_color;
@@ -121,7 +121,7 @@ module p09_breakout
     assign vga_r = video_out[1:0];
     assign vga_g = video_out[3:2];
     assign vga_b = video_out[5:4];
-    
+
     // Border generator
     p09_border_painter #(
         .BORDER_WIDTH(BORDER_WIDTH)
@@ -131,7 +131,7 @@ module p09_breakout
         .hpos(vga_hpos),
         .vpos(vga_vpos)
     );
-    
+
     // Ball painter
     wire [9:0]ball_x;
     wire [8:0]ball_y;
@@ -155,7 +155,7 @@ module p09_breakout
         .line_pulse(vga_line_pulse),
         .display_active(vga_active)
     );
-    
+
     // Paddle painter
     wire [9:0] paddle_x;
     wire [2:0] paddle_segment;
@@ -172,13 +172,13 @@ module p09_breakout
         .vpos(vga_vpos),
         .paddle_segment(paddle_segment)
     );
-    
+
     // Collisions
     wire wall_collision = draw_border && draw_ball;
     wire paddle_collision = draw_paddle && draw_ball;
     wire block_collision = draw_blocks && draw_ball;
     wire collision = wall_collision || paddle_collision || block_collision;
-    
+
     // Blocks painter
     wire [12:0] block_line_state;
     wire state_go_next_line;
@@ -215,7 +215,7 @@ module p09_breakout
         .vpos(vga_vpos),
         .lives(lives)
     );
-    
+
     // State storage
     wire [12:0] spi_new_line;
     wire spi_line_write_en;
@@ -243,7 +243,7 @@ module p09_breakout
         .high_beep(collision),
         .low_beep(block_collision || ball_out_of_bounds)
     );
-    
+
     // Game logic
     wire [0:0] game_state;
     wire ball_out_of_bounds;
@@ -324,5 +324,5 @@ module p09_breakout
         .shift_line(spi_line_shift),
         .stop_game(cmd_stop_game)
     );
-    
+
 endmodule
