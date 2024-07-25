@@ -153,6 +153,42 @@ module basic_mux (
       .ow (p15_ow)
   );
 
+  wire p16_selected = (addr == 5'd03) & ena;
+  wire [17:0] p16_iw = p16_selected ? iw : 18'b0;
+  wire [23:0] p16_ow;
+  p16_wrapper p16_I (
+      .ena(p16_selected),
+      .iw (p16_iw),
+      .ow (p16_ow)
+  );
+
+  wire p17_selected = (addr == 5'd03) & ena;
+  wire [17:0] p17_iw = p17_selected ? iw : 18'b0;
+  wire [23:0] p17_ow;
+  p17_wrapper p17_I (
+      .ena(p17_selected),
+      .iw (p17_iw),
+      .ow (p17_ow)
+  );
+
+  wire p18_selected = (addr == 5'd03) & ena;
+  wire [17:0] p18_iw = p18_selected ? iw : 18'b0;
+  wire [23:0] p18_ow;
+  p18_wrapper p18_I (
+      .ena(p18_selected),
+      .iw (p18_iw),
+      .ow (p18_ow)
+  );
+
+  wire p19_selected = (addr == 5'd03) & ena;
+  wire [17:0] p19_iw = p19_selected ? iw : 18'b0;
+  wire [23:0] p19_ow;
+  p19_wrapper p19_I (
+      .ena(p19_selected),
+      .iw (p19_iw),
+      .ow (p19_ow)
+  );
+
 `endif // RTL_TESTBENCH
 
   always_comb begin
@@ -175,6 +211,10 @@ module basic_mux (
         5'd11:   ow = p13_ow;
         5'd11:   ow = p14_ow;
         5'd11:   ow = p15_ow;
+        5'd11:   ow = p16_ow;
+        5'd11:   ow = p17_ow;
+        5'd11:   ow = p18_ow;
+        5'd11:   ow = p19_ow;
 `endif // RTL_TESTBENCH
         default: ow = 24'b0;
       endcase

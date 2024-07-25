@@ -24,6 +24,10 @@ export VERILOG_FILES = $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/tt_top.v \
                        $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p13_wrapper.v \
                        $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p14_wrapper.v \
                        $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p15_wrapper.v \
+                       $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p16_wrapper.v \
+                       $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p17_wrapper.v \
+                       $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p18_wrapper.v \
+                       $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p19_wrapper.v \
                        $(PROJECTS_HOME)/tt_um_chip_rom/src/tt_um_chip_rom.v \
                        $(PROJECTS_HOME)/tt_um_factory_test/src/tt_um_factory_test.v \
                        $(PROJECTS_HOME)/tt_um_urish_simon/src/simon.v \
@@ -108,7 +112,25 @@ export VERILOG_FILES = $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/tt_top.v \
                        $(PROJECTS_HOME)/tt_um_rejunity_ay8913/src/envelope.v \
                        $(PROJECTS_HOME)/tt_um_rejunity_ay8913/src/signal_edge.v \
                        $(PROJECTS_HOME)/tt_um_rejunity_ay8913/src/pwm.v \
-                       $(PROJECTS_HOME)/tt_um_rejunity_ay8913/src/tt_um_rejunity_ay8913.v
+                       $(PROJECTS_HOME)/tt_um_rejunity_ay8913/src/tt_um_rejunity_ay8913.v \
+                       $(PROJECTS_HOME)/tt_um_uwuifier/src/uart_rx.sv \
+                       $(PROJECTS_HOME)/tt_um_uwuifier/src/uart_tx.sv \
+                       $(PROJECTS_HOME)/tt_um_uwuifier/src/uart_fifo.sv \
+                       $(PROJECTS_HOME)/tt_um_uwuifier/src/uwuifier.sv \
+                       $(PROJECTS_HOME)/tt_um_uwuifier/src/tt_um_uwuifier.sv \
+                       $(PROJECTS_HOME)/tt_um_meriac_play_tune/src/player.v \
+                       $(PROJECTS_HOME)/tt_um_meriac_play_tune/src/tune.v \
+                       $(PROJECTS_HOME)/tt_um_top_mole99/src/tt_um_top_mole99.sv \
+                       $(PROJECTS_HOME)/tt_um_top_mole99/src/top.sv \
+                       $(PROJECTS_HOME)/tt_um_top_mole99/src/sprite_access.sv \
+                       $(PROJECTS_HOME)/tt_um_top_mole99/src/sprite_data.sv \
+                       $(PROJECTS_HOME)/tt_um_top_mole99/src/sprite_movement.sv \
+                       $(PROJECTS_HOME)/tt_um_top_mole99/src/background.sv \
+                       $(PROJECTS_HOME)/tt_um_top_mole99/src/timing.sv \
+                       $(PROJECTS_HOME)/tt_um_top_mole99/src/synchronizer.sv \
+                       $(PROJECTS_HOME)/tt_um_top_mole99/src/spi_receiver.sv \
+                       $(PROJECTS_HOME)/tt_um_tomkeddie_a/src/top_tto.v \
+                       $(PROJECTS_HOME)/tt_um_tomkeddie_a/src/vga.v
 
 export SDC_FILE      = $(DESIGN_HOME)/$(PLATFORM)/$(DESIGN_NICKNAME)/constraint.sdc
 

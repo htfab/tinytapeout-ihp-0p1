@@ -224,6 +224,62 @@ p_wrapper p_wrapper(
 
 endmodule
 
+module p16_wrapper (
+  input wire ena,
+  input wire [17:0] iw,
+  output wire [23:0] ow
+);
+
+p_wrapper p_wrapper(
+    .ena(ena),
+    .iw(iw),
+    .ow(ow)
+);
+
+endmodule
+
+module p17_wrapper (
+  input wire ena,
+  input wire [17:0] iw,
+  output wire [23:0] ow
+);
+
+p_wrapper p_wrapper(
+    .ena(ena),
+    .iw(iw),
+    .ow(ow)
+);
+
+endmodule
+
+module p18_wrapper (
+  input wire ena,
+  input wire [17:0] iw,
+  output wire [23:0] ow
+);
+
+p_wrapper p_wrapper(
+    .ena(ena),
+    .iw(iw),
+    .ow(ow)
+);
+
+endmodule
+
+module p19_wrapper (
+  input wire ena,
+  input wire [17:0] iw,
+  output wire [23:0] ow
+);
+
+p_wrapper p_wrapper(
+    .ena(ena),
+    .iw(iw),
+    .ow(ow)
+);
+
+endmodule
+
 module p_wrapper (
   input wire ena,
   input wire [17:0] iw,
