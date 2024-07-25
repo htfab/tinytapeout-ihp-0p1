@@ -20,6 +20,10 @@ export VERILOG_FILES = $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/tt_top.v \
                        $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p09_wrapper.v \
                        $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p10_wrapper.v \
                        $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p11_wrapper.v \
+                       $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p12_wrapper.v \
+                       $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p13_wrapper.v \
+                       $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p14_wrapper.v \
+                       $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p15_wrapper.v \
                        $(PROJECTS_HOME)/tt_um_chip_rom/src/tt_um_chip_rom.v \
                        $(PROJECTS_HOME)/tt_um_factory_test/src/tt_um_factory_test.v \
                        $(PROJECTS_HOME)/tt_um_urish_simon/src/simon.v \
@@ -88,7 +92,23 @@ export VERILOG_FILES = $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/tt_top.v \
                        $(PROJECTS_HOME)/tt_um_urish_usb_cdc/src/usb_cdc/phy_rx.v \
                        $(PROJECTS_HOME)/tt_um_urish_usb_cdc/src/usb_cdc/phy_tx.v \
                        $(PROJECTS_HOME)/tt_um_urish_usb_cdc/src/usb_cdc/sie.v \
-                       $(PROJECTS_HOME)/tt_um_urish_usb_cdc/src/usb_cdc/usb_cdc.v
+                       $(PROJECTS_HOME)/tt_um_urish_usb_cdc/src/usb_cdc/usb_cdc.v \
+                       $(PROJECTS_HOME)/tt_um_htfab_rotfpga2/src/tile.v \
+                       $(PROJECTS_HOME)/tt_um_htfab_rotfpga2/src/grid.v \
+                       $(PROJECTS_HOME)/tt_um_htfab_rotfpga2/src/tt_um_htfab_rotfpga2.v \
+                       $(PROJECTS_HOME)/tt_um_wokwi_380408823952452609/src/cells.v \
+                       $(PROJECTS_HOME)/tt_um_wokwi_380408823952452609/src/tt_um_wokwi_380408823952452609.v \
+                       $(PROJECTS_HOME)/tt_um_flappy_vga_cutout1/src/tt_um_flappy_vga_cutout1.v \
+                       $(PROJECTS_HOME)/tt_um_flappy_vga_cutout1/src/vgaControl.v \
+                       $(PROJECTS_HOME)/tt_um_flappy_vga_cutout1/src/bitGen.v \
+                       $(PROJECTS_HOME)/tt_um_flappy_vga_cutout1/src/gameControl.v \
+                       $(PROJECTS_HOME)/tt_um_rejunity_ay8913/src/attenuation.v \
+                       $(PROJECTS_HOME)/tt_um_rejunity_ay8913/src/tone.v \
+                       $(PROJECTS_HOME)/tt_um_rejunity_ay8913/src/noise.v \
+                       $(PROJECTS_HOME)/tt_um_rejunity_ay8913/src/envelope.v \
+                       $(PROJECTS_HOME)/tt_um_rejunity_ay8913/src/signal_edge.v \
+                       $(PROJECTS_HOME)/tt_um_rejunity_ay8913/src/pwm.v \
+                       $(PROJECTS_HOME)/tt_um_rejunity_ay8913/src/tt_um_rejunity_ay8913.v
 
 export SDC_FILE      = $(DESIGN_HOME)/$(PLATFORM)/$(DESIGN_NICKNAME)/constraint.sdc
 
