@@ -16,6 +16,10 @@ export VERILOG_FILES = $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/tt_top.v \
                        $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p05_wrapper.v \
                        $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p06_wrapper.v \
                        $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p07_wrapper.v \
+                       $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p08_wrapper.v \
+                       $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p09_wrapper.v \
+                       $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p10_wrapper.v \
+                       $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p11_wrapper.v \
                        $(PROJECTS_HOME)/tt_um_chip_rom/src/tt_um_chip_rom.v \
                        $(PROJECTS_HOME)/tt_um_factory_test/src/tt_um_factory_test.v \
                        $(PROJECTS_HOME)/tt_um_urish_simon/src/simon.v \
@@ -35,7 +39,56 @@ export VERILOG_FILES = $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/tt_top.v \
                        $(PROJECTS_HOME)/tt_um_mattvenn_rgb_mixer/src/rgb_mixer.v \
                        $(PROJECTS_HOME)/tt_um_mattvenn_rgb_mixer/src/debounce.v \
                        $(PROJECTS_HOME)/tt_um_mattvenn_rgb_mixer/src/pwm.v \
-                       $(PROJECTS_HOME)/tt_um_mattvenn_rgb_mixer/src/encoder.v
+                       $(PROJECTS_HOME)/tt_um_mattvenn_rgb_mixer/src/encoder.v \
+                       $(PROJECTS_HOME)/tt_um_algofoogle_raybox_zero/src/project.v \
+                       $(PROJECTS_HOME)/tt_um_algofoogle_raybox_zero/src/raybox-zero/fixed_point_params.v \
+                       $(PROJECTS_HOME)/tt_um_algofoogle_raybox_zero/src/raybox-zero/helpers.v \
+                       $(PROJECTS_HOME)/tt_um_algofoogle_raybox_zero/src/raybox-zero/rbzero.v \
+                       $(PROJECTS_HOME)/tt_um_algofoogle_raybox_zero/src/raybox-zero/spi_registers.v \
+                       $(PROJECTS_HOME)/tt_um_algofoogle_raybox_zero/src/raybox-zero/debug_overlay.v \
+                       $(PROJECTS_HOME)/tt_um_algofoogle_raybox_zero/src/raybox-zero/map_overlay.v \
+                       $(PROJECTS_HOME)/tt_um_algofoogle_raybox_zero/src/raybox-zero/map_rom.v \
+                       $(PROJECTS_HOME)/tt_um_algofoogle_raybox_zero/src/raybox-zero/pov.v \
+                       $(PROJECTS_HOME)/tt_um_algofoogle_raybox_zero/src/raybox-zero/lzc.v \
+                       $(PROJECTS_HOME)/tt_um_algofoogle_raybox_zero/src/raybox-zero/reciprocal.v \
+                       $(PROJECTS_HOME)/tt_um_algofoogle_raybox_zero/src/raybox-zero/wall_tracer.v \
+                       $(PROJECTS_HOME)/tt_um_algofoogle_raybox_zero/src/raybox-zero/row_render.v \
+                       $(PROJECTS_HOME)/tt_um_algofoogle_raybox_zero/src/raybox-zero/vga_mux.v \
+                       $(PROJECTS_HOME)/tt_um_algofoogle_raybox_zero/src/raybox-zero/vga_sync.v \
+                       $(PROJECTS_HOME)/tt_um_algofoogle_raybox_zero/src/raybox-zero/top_raybox_zero_fsm.v \
+                       $(PROJECTS_HOME)/tt_um_robojan_top/src/ball_painter.v \
+                       $(PROJECTS_HOME)/tt_um_robojan_top/src/block_state.v \
+                       $(PROJECTS_HOME)/tt_um_robojan_top/src/blocks_painter.v \
+                       $(PROJECTS_HOME)/tt_um_robojan_top/src/border_painter.v \
+                       $(PROJECTS_HOME)/tt_um_robojan_top/src/breakout.v \
+                       $(PROJECTS_HOME)/tt_um_robojan_top/src/game_logic.v \
+                       $(PROJECTS_HOME)/tt_um_robojan_top/src/lives_painter.v \
+                       $(PROJECTS_HOME)/tt_um_robojan_top/src/paddle_painter.v \
+                       $(PROJECTS_HOME)/tt_um_robojan_top/src/sound_gen.v \
+                       $(PROJECTS_HOME)/tt_um_robojan_top/src/spi_ctrl.v \
+                       $(PROJECTS_HOME)/tt_um_robojan_top/src/spi_if.v \
+                       $(PROJECTS_HOME)/tt_um_robojan_top/src/synchronizer.v \
+                       $(PROJECTS_HOME)/tt_um_robojan_top/src/tt_um_robojan_top.v \
+                       $(PROJECTS_HOME)/tt_um_robojan_top/src/vga_timing.v \
+                       $(PROJECTS_HOME)/tt_um_robojan_top/src/video_mux.v \
+                       $(PROJECTS_HOME)/tt_um_MichaelBell_nanoV/src/tt_top.v \
+                       $(PROJECTS_HOME)/tt_um_MichaelBell_nanoV/src/nanoV/alu.v \
+                       $(PROJECTS_HOME)/tt_um_MichaelBell_nanoV/src/nanoV/core.v \
+                       $(PROJECTS_HOME)/tt_um_MichaelBell_nanoV/src/nanoV/cpu.v \
+                       $(PROJECTS_HOME)/tt_um_MichaelBell_nanoV/src/nanoV/register.v \
+                       $(PROJECTS_HOME)/tt_um_MichaelBell_nanoV/src/nanoV/shift.v \
+                       $(PROJECTS_HOME)/tt_um_MichaelBell_nanoV/src/nanoV/multiply.v \
+                       $(PROJECTS_HOME)/tt_um_MichaelBell_nanoV/src/nanoV/uart/uart_tx.v \
+                       $(PROJECTS_HOME)/tt_um_MichaelBell_nanoV/src/nanoV/uart/uart_rx.v \
+                       $(PROJECTS_HOME)/tt_um_urish_usb_cdc/src/tt_um_usb_cdc.v \
+                       $(PROJECTS_HOME)/tt_um_urish_usb_cdc/src/usb_cdc/bulk_endp.v \
+                       $(PROJECTS_HOME)/tt_um_urish_usb_cdc/src/usb_cdc/ctrl_endp.v \
+                       $(PROJECTS_HOME)/tt_um_urish_usb_cdc/src/usb_cdc/in_fifo.v \
+                       $(PROJECTS_HOME)/tt_um_urish_usb_cdc/src/usb_cdc/out_fifo.v \
+                       $(PROJECTS_HOME)/tt_um_urish_usb_cdc/src/usb_cdc/phy_rx.v \
+                       $(PROJECTS_HOME)/tt_um_urish_usb_cdc/src/usb_cdc/phy_tx.v \
+                       $(PROJECTS_HOME)/tt_um_urish_usb_cdc/src/usb_cdc/sie.v \
+                       $(PROJECTS_HOME)/tt_um_urish_usb_cdc/src/usb_cdc/usb_cdc.v
 
 export SDC_FILE      = $(DESIGN_HOME)/$(PLATFORM)/$(DESIGN_NICKNAME)/constraint.sdc
 
