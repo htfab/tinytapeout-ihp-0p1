@@ -18,7 +18,7 @@
 module p21_jumping (
 	input wire jump,
 	input wire halt,
-    
+
     input wire [23:0] speed,
 	output reg [6:0] jump_pos,
 

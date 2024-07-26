@@ -1,11 +1,11 @@
---- 
+---
 # Tiny Tapeout project information
 project:
   wokwi_id:    380408823952452609        # If using wokwi, set this to your project's ID
 
-# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here.
 # Source files must be in ./src and you must list each source file separately
-#  source_files:        
+#  source_files:
 #    - counter.v
 #    - decoder.v
 #  top_module:  "tt_um_example"      # Put the name of your top module here, must start with "tt_um_". Make it unique by including your github username
@@ -20,7 +20,7 @@ yaml_version: 4
 # it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
 #
 # Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
-documentation: 
+documentation:
   author:       "Dakota W Winslow"      # Your name
   title:        "Character Selector"      # Project title
   language:     "Wokwi" # other examples include Verilog, Amaranth, VHDL, etc
@@ -28,7 +28,7 @@ documentation:
 
 # Longer description of how the project works. You can use standard markdown format.
   how_it_works: |
-      This project displays a user-selctable character on the 7-segment display. Input DIPs 1-6 are used to select the character to display. 
+      This project displays a user-selctable character on the 7-segment display. Input DIPs 1-6 are used to select the character to display.
       Inputs 7 and 8 are not connected. The display is driven one segment at a time, so a high clock rate is required to see thew character.
       Characters are a mix of upper and lower case, preferring whichever is more recognizable. See the wikipedia page on 7-segment display representations
       for reference [https://en.wikipedia.org/wiki/Seven-segment_display_character_representations].
@@ -39,8 +39,8 @@ documentation:
       to the character to be displayed. 0-25 for a-z, then 26:[space], 27:[_], 28:[-], 29:[.], 30:[!], 31:["]. If only one segment is displayed, make sure your clock is set properly!
 
 # A description of what the inputs do (e.g. red button, SPI CLK, SPI MOSI, etc).
-  inputs:               
-    - dip0 
+  inputs:
+    - dip0
     - dip1
     - dip2
     - dip3

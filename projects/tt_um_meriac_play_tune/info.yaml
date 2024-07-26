@@ -1,4 +1,4 @@
---- 
+---
 # Tiny Tapeout project information
 project:
   wokwi_id:    0        # If using wokwi, set this to your project's ID
@@ -17,7 +17,7 @@ yaml_version: 4
 # it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
 #
 # Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
-documentation: 
+documentation:
   author:       "Milosch Meriac"                      # Your name
   title:        "Super Mario Tune on A Piezo Speaker" # Project title
   language:     "Verilog"                             # other examples include Verilog, Amaranth, VHDL, etc
@@ -33,7 +33,7 @@ documentation:
       Provide 100kHz clock on "clk" pin, briefly hit reset low ("rst_n") and uio_out[1:0] will play a differential sound wave over a connected piezo speaker (Super Mario)
 
 # All inputs are copied to the outputs for basic design verification
-  inputs:               
+  inputs:
     - ui_in[0]
     - ui_in[1]
     - ui_in[2]

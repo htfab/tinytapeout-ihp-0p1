@@ -41,7 +41,7 @@ always @(posedge clk) begin
         if (haddr >= 656 && haddr < 752) begin
             hsync <= 1'b0;
         end
-        
+
         // End of row
         if (haddr >= 800) begin
             haddr <= 0;
@@ -54,7 +54,7 @@ always @(posedge clk) begin
             else begin
                 vsync <= 1;
             end
-            
+
             // End of frame
             if (vaddr >= 525) begin
                 vaddr <= 0;

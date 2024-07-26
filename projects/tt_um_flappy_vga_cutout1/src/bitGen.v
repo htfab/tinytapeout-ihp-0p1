@@ -6,9 +6,9 @@ module p14_bitGen (
 	input wire [9:0] pipe_pos,
 	output reg red, green, blue
 );
-	
+
 	reg next_red, next_blue, next_green;
-	
+
 	always@(posedge clock)
 	begin
 		if(!reset)
@@ -58,5 +58,5 @@ module p14_bitGen (
 			next_blue = 1'b0;
 		end
 	end
-	
+
 endmodule
