@@ -1,11 +1,11 @@
---- 
+---
 # TinyTapeout project information
 project:
   wokwi_id:    0        # If using wokwi, set this to your project's ID
 
-# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here.
 # Source files must be in ./src and you must list each source file separately
-  source_files:        
+  source_files:
     - neptune_tinytapeout_propwindow.v
   top_module:  "tt_um_psychogenic_neptuneproportional"      # put the name of your top module here, make it unique by prepending your github username
 
@@ -19,7 +19,7 @@ yaml_version: 4
 # it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
 #
 # Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
-documentation: 
+documentation:
   author:       "Pat Deegan"
   title:        "Neptune guitar tuner (proportional window, version b, debug output on bidir pins, larger set of frequencies)"
   language:     "Verilog"
@@ -28,7 +28,7 @@ documentation:
 # Longer description of how the project works. You can use standard markdown format.
   how_it_works: |
      The rising edge of the input is counted over a set period of time
-     and attempt is made to tell if this count is at, or near, a 
+     and attempt is made to tell if this count is at, or near, a
      frequency of interest--namely the E,A,D,G,B notes of guitar
      standard tuning.
      In this version, the system should be capable of detecting:
@@ -37,7 +37,7 @@ documentation:
       0: 1kHz
       1: 2kHz
       2: 4kHz
-      3: 3.277kHz 
+      3: 3.277kHz
       4: 10 kHz
       5: 32.768kHz
       6: 40kHz
@@ -48,12 +48,12 @@ documentation:
       Set the clocking bits to 0b000 for a 1kHz clock input (input bits
       2,3 and 4).
       Input pulses are fed to input bit 5.  The raw count of pulses over
-      the sampling period (hard-coded here to 0.5 seconds) is output on 
+      the sampling period (hard-coded here to 0.5 seconds) is output on
       the bidir pins.  The output is setup to drive a dual 7-segment display, or a single 7-segment (by using the output_display bits on
       the input).  In single mode, the 7-seg dot marks exact match.
 
 # A description of what the inputs do (e.g. red button, SPI CLK, SPI MOSI, etc).
-  inputs:               
+  inputs:
     - n/a
     - n/a
     - clk config 0
@@ -62,7 +62,7 @@ documentation:
     - input pulse
     - output display single enable (LOW == dual)
     - output display select
-    
+
 # A description of what the outputs do (e.g. status LED, SPI MISO, etc)
   outputs:
     - segment a

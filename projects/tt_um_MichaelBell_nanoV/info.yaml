@@ -1,11 +1,11 @@
---- 
+---
 # TinyTapeout project information
 project:
   wokwi_id:    0        # If using wokwi, set this to your project's ID
 
-# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here.
 # Source files must be in ./src and you must list each source file separately
-  source_files:        
+  source_files:
     - tt_top.v
     - nanoV/alu.v
     - nanoV/core.v
@@ -27,7 +27,7 @@ yaml_version: 4
 # it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
 #
 # Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
-documentation: 
+documentation:
   author:       "Michael Bell"      # Your name
   title:        "Risc-V Nano V"      # Project title
   language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
@@ -38,9 +38,9 @@ documentation:
       A minimal RV32E processor using an SPI RAM for instructions and data.
 
       The SPI RAM and a UART are connected to the bidi IOs.  The SPI RAM is clocked at the same speed as the input clock.
-      
+
       The CPU has no instruction or data cache and effectively runs at clock speed / 32.  More details can be found in the [nanoV](https://github.com/MichaelBell/nanoV) repo.
-      
+
       Restrictions/unimplemented parts of RV32E:
 
         - register x3/gp is hardcoded to 0x00001000 (this allows data in the low 6KB of RAM to be accessed cheaply).
@@ -56,7 +56,7 @@ documentation:
 
         - Bit 1: Received data waiting
         - Bit 0: Data transmit in progress
-      
+
       There are no transmit or receive FIFOs, before a program sends a byte it should check bit 0 is low before writing.  The peripheral library in [nanoV-sdk](https://github.com/MichaelBell/nanoV-sdk) does this.
 
 # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
@@ -66,7 +66,7 @@ documentation:
       The SPI RAM outputs are disabled when Reset is asserted, allowing the RAM to be reprogrammed easily.
 
 # A description of what the inputs do (e.g. red button, SPI CLK, SPI MOSI, etc).
-  inputs:               
+  inputs:
     - General purpose input 0
     - General purpose input 1
     - General purpose input 2

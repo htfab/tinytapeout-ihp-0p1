@@ -21,12 +21,12 @@ module tt_um_flappy_vga_cutout1 (
 	wire h_sync, v_sync;
 	wire game_button;
 	wire bright;
-	
+
 	assign uio_oe = 8'b11111111;
 	assign uio_out = score;
-	
+
 	assign game_button = ui_in[0];
-	
+
 	// Tiny VGA PMOD compatible outputs
 	assign uo_out[0] = red;    // R1
 	assign uo_out[1] = green;  // G1
@@ -36,11 +36,11 @@ module tt_um_flappy_vga_cutout1 (
 	assign uo_out[5] = green;  // G0
 	assign uo_out[6] = blue;   // B0
 	assign uo_out[7] = h_sync; // hsync
-	
+
 	p14_gameControl game (clk, rst_n, v_sync, game_button, bird_pos, hole_pos, pipe_pos, score);
-	
+
 	p14_vgaControl controller (clk, rst_n, h_sync, v_sync, bright, h_count, v_count);
-	
+
 	p14_bitGen bitGenerator (clk, rst_n, bright, h_count, v_count, bird_pos, hole_pos, pipe_pos, red, green, blue);
-	
+
 endmodule

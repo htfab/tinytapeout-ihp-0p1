@@ -12,9 +12,9 @@ project:
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
   top_module:  "tt_um_algofoogle_raybox_zero"
-  
+
   # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line:
-  source_files:        
+  source_files:
     - raybox-zero/src/rtl/fixed_point_params.v
     - raybox-zero/src/rtl/helpers.v
     - raybox-zero/src/rtl/rbzero.v

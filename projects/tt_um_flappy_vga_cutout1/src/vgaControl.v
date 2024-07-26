@@ -27,7 +27,7 @@ module p14_vgaControl (
 			begin
 				h_sync <= 1;
 			end
-			
+
 			if(v_count < 10'd490) // display + front porch
 			begin
 				v_sync <= 1;
@@ -40,7 +40,7 @@ module p14_vgaControl (
 			begin
 				v_sync <= 1;
 			end
-			
+
 			// increment h_count and v_count
 			if(h_count == 10'd799)
 			begin
@@ -52,7 +52,7 @@ module p14_vgaControl (
 			end
 			else
 				h_count <= h_count + 10'b1;
-			
+
 			// set bright if in display window
 			if(h_count < 640 && v_count < 480)
 				bright <= 1;
