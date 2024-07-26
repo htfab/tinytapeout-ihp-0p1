@@ -28,6 +28,10 @@ export VERILOG_FILES = $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/tt_top.v \
                        $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p17_wrapper.v \
                        $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p18_wrapper.v \
                        $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p19_wrapper.v \
+                       $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p20_wrapper.v \
+                       $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p21_wrapper.v \
+                       $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p22_wrapper.v \
+                       $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/wrappers/p23_wrapper.v \
                        $(PROJECTS_HOME)/tt_um_chip_rom/src/tt_um_chip_rom.v \
                        $(PROJECTS_HOME)/tt_um_factory_test/src/tt_um_factory_test.v \
                        $(PROJECTS_HOME)/tt_um_urish_simon/src/simon.v \
@@ -130,7 +134,56 @@ export VERILOG_FILES = $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/tt_top.v \
                        $(PROJECTS_HOME)/tt_um_top_mole99/src/synchronizer.sv \
                        $(PROJECTS_HOME)/tt_um_top_mole99/src/spi_receiver.sv \
                        $(PROJECTS_HOME)/tt_um_tomkeddie_a/src/top_tto.v \
-                       $(PROJECTS_HOME)/tt_um_tomkeddie_a/src/vga.v
+                       $(PROJECTS_HOME)/tt_um_tomkeddie_a/src/vga.v \
+                       $(PROJECTS_HOME)/tt_um_no_time_for_squares_tommythorn/src/tt_um_no_time_for_squares_tommythorn.v \
+                       $(PROJECTS_HOME)/tt_um_no_time_for_squares_tommythorn/src/clock.v \
+                       $(PROJECTS_HOME)/tt_um_no_time_for_squares_tommythorn/src/vga.v \
+                       $(PROJECTS_HOME)/tt_um_no_time_for_squares_tommythorn/src/tile.v \
+                       $(PROJECTS_HOME)/tt_um_dinogame/src/dinogame.v \
+                       $(PROJECTS_HOME)/tt_um_dinogame/src/dinosprite.v \
+                       $(PROJECTS_HOME)/tt_um_dinogame/src/jumping.v \
+                       $(PROJECTS_HOME)/tt_um_dinogame/src/rendering.v \
+                       $(PROJECTS_HOME)/tt_um_dinogame/src/rng.v \
+                       $(PROJECTS_HOME)/tt_um_dinogame/src/score.v \
+                       $(PROJECTS_HOME)/tt_um_dinogame/src/scroll.v \
+                       $(PROJECTS_HOME)/tt_um_dinogame/src/vga.v \
+                       $(PROJECTS_HOME)/tt_um_dinogame/src/tt_um_dinogame.sv \
+                       $(PROJECTS_HOME)/tt_um_psychogenic_shaman/src/tt_um_psychogenic_shaman.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/spi.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/divider.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/rx_uart.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/defines_soc.vh \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/csr_exception_handler.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/riscv_defines.vh \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/rv32_amo_opcodes.vh \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/design_elements.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/fifo.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/mcause.vh \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/soc.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/alu_decoder.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/datapath_unit.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/extend.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/load_alignment.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/alu.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/csr_utilities.vh \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/qqspi.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/load_decoder.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/riscv_priv_csr_status.vh \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/multiplier_decoder.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/csr_decoder.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/clint.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/register_file.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/misa.vh \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/tx_uart.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/tt_um_kianV_rv32ima_uLinux_SoC.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/main_fsm.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/divider_decoder.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/multiplier_extension_decoder.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/multiplier.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/store_alignment.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/store_decoder.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/control_unit.v \
+                       $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/kianv_harris_mc_edition.v
 
 export SDC_FILE      = $(DESIGN_HOME)/$(PLATFORM)/$(DESIGN_NICKNAME)/constraint.sdc
 
@@ -150,14 +203,14 @@ export MAX_ROUTING_LAYER = TopMetal2
 # Following exports should be part of platforms/ihp-sg13g2/config.mk and
 # might be obsolete in the future.
 export ADDITIONAL_LEFS = \
-	$(IHP_PDK_ROOT)/ihp-sg13g2/libs.ref/sg13g2_io/lef/sg13g2_io.lef \
-	$(DESIGN_HOME)/$(PLATFORM)/$(DESIGN_NICKNAME)/macros/bondpad/lef/bondpad_70x70.lef
+    $(IHP_PDK_ROOT)/ihp-sg13g2/libs.ref/sg13g2_io/lef/sg13g2_io.lef \
+    $(DESIGN_HOME)/$(PLATFORM)/$(DESIGN_NICKNAME)/macros/bondpad/lef/bondpad_70x70.lef
 export ADDITIONAL_GDS = \
-	$(IHP_PDK_ROOT)/ihp-sg13g2/libs.ref/sg13g2_io/gds/sg13g2_io.gds \
-	$(DESIGN_HOME)/$(PLATFORM)/$(DESIGN_NICKNAME)/macros/bondpad/gds/bondpad_70x70.gds
+    $(IHP_PDK_ROOT)/ihp-sg13g2/libs.ref/sg13g2_io/gds/sg13g2_io.gds \
+    $(DESIGN_HOME)/$(PLATFORM)/$(DESIGN_NICKNAME)/macros/bondpad/gds/bondpad_70x70.gds
 export ADDITIONAL_LIBS = \
-	$(IHP_PDK_ROOT)/ihp-sg13g2/libs.ref/sg13g2_io/lib/sg13g2_io_dummy.lib
+    $(IHP_PDK_ROOT)/ihp-sg13g2/libs.ref/sg13g2_io/lib/sg13g2_io_dummy.lib
 export CDL_FILE = \
-	$(IHP_PDK_ROOT)/ihp-sg13g2/libs.ref/sg13g2_stdcell/cdl/sg13g2_stdcell.cdl \
-	$(IHP_PDK_ROOT)/ihp-sg13g2/libs.ref/sg13g2_io/cdl/sg13g2_io.cdl \
-	$(DESIGN_HOME)/$(PLATFORM)/$(DESIGN_NICKNAME)/macros/bondpad/cdl/bondpad_70x70.cdl
+    $(IHP_PDK_ROOT)/ihp-sg13g2/libs.ref/sg13g2_stdcell/cdl/sg13g2_stdcell.cdl \
+    $(IHP_PDK_ROOT)/ihp-sg13g2/libs.ref/sg13g2_io/cdl/sg13g2_io.cdl \
+    $(DESIGN_HOME)/$(PLATFORM)/$(DESIGN_NICKNAME)/macros/bondpad/cdl/bondpad_70x70.cdl

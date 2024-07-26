@@ -278,6 +278,54 @@ p_wrapper p_wrapper(
     .ow(ow)
 );
 
+module p20_wrapper (
+  input wire ena,
+  input wire [17:0] iw,
+  output wire [23:0] ow
+);
+
+p_wrapper p_wrapper(
+    .ena(ena),
+    .iw(iw),
+    .ow(ow)
+);
+
+module p21_wrapper (
+  input wire ena,
+  input wire [17:0] iw,
+  output wire [23:0] ow
+);
+
+p_wrapper p_wrapper(
+    .ena(ena),
+    .iw(iw),
+    .ow(ow)
+);
+
+module p22_wrapper (
+  input wire ena,
+  input wire [17:0] iw,
+  output wire [23:0] ow
+);
+
+p_wrapper p_wrapper(
+    .ena(ena),
+    .iw(iw),
+    .ow(ow)
+);
+
+module p23_wrapper (
+  input wire ena,
+  input wire [17:0] iw,
+  output wire [23:0] ow
+);
+
+p_wrapper p_wrapper(
+    .ena(ena),
+    .iw(iw),
+    .ow(ow)
+);
+
 endmodule
 
 module p_wrapper (
