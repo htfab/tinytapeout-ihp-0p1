@@ -278,6 +278,8 @@ p_wrapper p_wrapper(
     .ow(ow)
 );
 
+endmodule
+
 module p20_wrapper (
   input wire ena,
   input wire [17:0] iw,
@@ -289,6 +291,8 @@ p_wrapper p_wrapper(
     .iw(iw),
     .ow(ow)
 );
+
+endmodule
 
 module p21_wrapper (
   input wire ena,
@@ -302,6 +306,8 @@ p_wrapper p_wrapper(
     .ow(ow)
 );
 
+endmodule
+
 module p22_wrapper (
   input wire ena,
   input wire [17:0] iw,
@@ -313,6 +319,8 @@ p_wrapper p_wrapper(
     .iw(iw),
     .ow(ow)
 );
+
+endmodule
 
 module p23_wrapper (
   input wire ena,
