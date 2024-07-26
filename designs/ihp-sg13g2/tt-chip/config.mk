@@ -149,7 +149,18 @@ export VERILOG_FILES = $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/tt_top.v \
                        $(PROJECTS_HOME)/tt_um_dinogame/src/scroll.v \
                        $(PROJECTS_HOME)/tt_um_dinogame/src/vga.v \
                        $(PROJECTS_HOME)/tt_um_dinogame/src/tt_um_dinogame.sv \
-                       $(PROJECTS_HOME)/tt_um_psychogenic_shaman/src/tt_um_psychogenic_shaman.v \
+                       $(PROJECTS_HOME)/tt_um_dlmiles_muldiv4/src/AND_GATE.v \
+                       $(PROJECTS_HOME)/tt_um_dlmiles_muldiv4/src/AND_GATE_4_INPUTS.v \
+                       $(PROJECTS_HOME)/tt_um_dlmiles_muldiv4/src/DIVUNIT.v \
+                       $(PROJECTS_HOME)/tt_um_dlmiles_muldiv4/src/FA.v \
+                       $(PROJECTS_HOME)/tt_um_dlmiles_muldiv4/src/HA.v \
+                       $(PROJECTS_HOME)/tt_um_dlmiles_muldiv4/src/Multiplexer_2.v \
+                       $(PROJECTS_HOME)/tt_um_dlmiles_muldiv4/src/NAND_GATE.v \
+                       $(PROJECTS_HOME)/tt_um_dlmiles_muldiv4/src/OR_GATE.v \
+                       $(PROJECTS_HOME)/tt_um_dlmiles_muldiv4/src/XOR_GATE_ONEHOT.v \
+                       $(PROJECTS_HOME)/tt_um_dlmiles_muldiv4/src/div4.v \
+                       $(PROJECTS_HOME)/tt_um_dlmiles_muldiv4/src/mul4.v \
+                       $(PROJECTS_HOME)/tt_um_dlmiles_muldiv4/src/top_tt_um_dlmiles_muldiv4.v \
                        $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/spi.v \
                        $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/divider.v \
                        $(PROJECTS_HOME)/tt_um_kianV_rv32ima_uLinux_SoC/src/rx_uart.v \
