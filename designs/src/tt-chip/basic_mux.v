@@ -45,7 +45,7 @@ module basic_mux (
       .ow (p03_ow)
   );
 
-  wire p04_selected = (addr == 5'd03) & ena;
+  wire p04_selected = (addr == 5'd04) & ena;
   wire [17:0] p04_iw = p04_selected ? iw : 18'b0;
   wire [23:0] p04_ow;
   p04_wrapper p04_I (
@@ -54,7 +54,7 @@ module basic_mux (
       .ow (p04_ow)
   );
 
-  wire p05_selected = (addr == 5'd03) & ena;
+  wire p05_selected = (addr == 5'd05) & ena;
   wire [17:0] p05_iw = p05_selected ? iw : 18'b0;
   wire [23:0] p05_ow;
   p05_wrapper p05_I (
@@ -63,7 +63,7 @@ module basic_mux (
       .ow (p05_ow)
   );
 
-  wire p06_selected = (addr == 5'd03) & ena;
+  wire p06_selected = (addr == 5'd06) & ena;
   wire [17:0] p06_iw = p06_selected ? iw : 18'b0;
   wire [23:0] p06_ow;
   p06_wrapper p06_I (
@@ -72,7 +72,7 @@ module basic_mux (
       .ow (p06_ow)
   );
 
-  wire p07_selected = (addr == 5'd03) & ena;
+  wire p07_selected = (addr == 5'd07) & ena;
   wire [17:0] p07_iw = p07_selected ? iw : 18'b0;
   wire [23:0] p07_ow;
   p07_wrapper p07_I (
@@ -81,7 +81,7 @@ module basic_mux (
       .ow (p07_ow)
   );
 
-  wire p08_selected = (addr == 5'd03) & ena;
+  wire p08_selected = (addr == 5'd08) & ena;
   wire [17:0] p08_iw = p08_selected ? iw : 18'b0;
   wire [23:0] p08_ow;
   p08_wrapper p08_I (
@@ -90,7 +90,7 @@ module basic_mux (
       .ow (p08_ow)
   );
 
-  wire p09_selected = (addr == 5'd03) & ena;
+  wire p09_selected = (addr == 5'd09) & ena;
   wire [17:0] p09_iw = p09_selected ? iw : 18'b0;
   wire [23:0] p09_ow;
   p09_wrapper p09_I (
@@ -99,7 +99,7 @@ module basic_mux (
       .ow (p09_ow)
   );
 
-  wire p10_selected = (addr == 5'd03) & ena;
+  wire p10_selected = (addr == 5'd10) & ena;
   wire [17:0] p10_iw = p10_selected ? iw : 18'b0;
   wire [23:0] p10_ow;
   p10_wrapper p10_I (
@@ -108,7 +108,7 @@ module basic_mux (
       .ow (p10_ow)
   );
 
-  wire p11_selected = (addr == 5'd03) & ena;
+  wire p11_selected = (addr == 5'd11) & ena;
   wire [17:0] p11_iw = p11_selected ? iw : 18'b0;
   wire [23:0] p11_ow;
   p11_wrapper p11_I (
@@ -117,7 +117,7 @@ module basic_mux (
       .ow (p11_ow)
   );
 
-  wire p12_selected = (addr == 5'd03) & ena;
+  wire p12_selected = (addr == 5'd12) & ena;
   wire [17:0] p12_iw = p12_selected ? iw : 18'b0;
   wire [23:0] p12_ow;
   p12_wrapper p12_I (
@@ -126,7 +126,7 @@ module basic_mux (
       .ow (p12_ow)
   );
 
-  wire p13_selected = (addr == 5'd03) & ena;
+  wire p13_selected = (addr == 5'd13) & ena;
   wire [17:0] p13_iw = p13_selected ? iw : 18'b0;
   wire [23:0] p13_ow;
   p13_wrapper p13_I (
@@ -135,7 +135,7 @@ module basic_mux (
       .ow (p13_ow)
   );
 
-  wire p14_selected = (addr == 5'd03) & ena;
+  wire p14_selected = (addr == 5'd14) & ena;
   wire [17:0] p14_iw = p14_selected ? iw : 18'b0;
   wire [23:0] p14_ow;
   p14_wrapper p14_I (
@@ -144,7 +144,7 @@ module basic_mux (
       .ow (p14_ow)
   );
 
-  wire p15_selected = (addr == 5'd03) & ena;
+  wire p15_selected = (addr == 5'd15) & ena;
   wire [17:0] p15_iw = p15_selected ? iw : 18'b0;
   wire [23:0] p15_ow;
   p15_wrapper p15_I (
@@ -153,7 +153,7 @@ module basic_mux (
       .ow (p15_ow)
   );
 
-  wire p16_selected = (addr == 5'd03) & ena;
+  wire p16_selected = (addr == 5'd16) & ena;
   wire [17:0] p16_iw = p16_selected ? iw : 18'b0;
   wire [23:0] p16_ow;
   p16_wrapper p16_I (
@@ -162,7 +162,7 @@ module basic_mux (
       .ow (p16_ow)
   );
 
-  wire p17_selected = (addr == 5'd03) & ena;
+  wire p17_selected = (addr == 5'd17) & ena;
   wire [17:0] p17_iw = p17_selected ? iw : 18'b0;
   wire [23:0] p17_ow;
   p17_wrapper p17_I (
@@ -171,7 +171,7 @@ module basic_mux (
       .ow (p17_ow)
   );
 
-  wire p18_selected = (addr == 5'd03) & ena;
+  wire p18_selected = (addr == 5'd18) & ena;
   wire [17:0] p18_iw = p18_selected ? iw : 18'b0;
   wire [23:0] p18_ow;
   p18_wrapper p18_I (
@@ -180,7 +180,7 @@ module basic_mux (
       .ow (p18_ow)
   );
 
-  wire p19_selected = (addr == 5'd03) & ena;
+  wire p19_selected = (addr == 5'd19) & ena;
   wire [17:0] p19_iw = p19_selected ? iw : 18'b0;
   wire [23:0] p19_ow;
   p19_wrapper p19_I (
@@ -189,7 +189,7 @@ module basic_mux (
       .ow (p19_ow)
   );
 
-  wire p20_selected = (addr == 5'd03) & ena;
+  wire p20_selected = (addr == 5'd20) & ena;
   wire [17:0] p20_iw = p20_selected ? iw : 18'b0;
   wire [23:0] p20_ow;
   p20_wrapper p20_I (
@@ -198,7 +198,7 @@ module basic_mux (
       .ow (p20_ow)
   );
 
-  wire p21_selected = (addr == 5'd03) & ena;
+  wire p21_selected = (addr == 5'd21) & ena;
   wire [17:0] p21_iw = p21_selected ? iw : 18'b0;
   wire [23:0] p21_ow;
   p21_wrapper p21_I (
@@ -207,7 +207,7 @@ module basic_mux (
       .ow (p21_ow)
   );
 
-  wire p22_selected = (addr == 5'd03) & ena;
+  wire p22_selected = (addr == 5'd22) & ena;
   wire [17:0] p22_iw = p22_selected ? iw : 18'b0;
   wire [23:0] p22_ow;
   p22_wrapper p22_I (
@@ -216,7 +216,7 @@ module basic_mux (
       .ow (p22_ow)
   );
 
-  wire p23_selected = (addr == 5'd03) & ena;
+  wire p23_selected = (addr == 5'd23) & ena;
   wire [17:0] p23_iw = p23_selected ? iw : 18'b0;
   wire [23:0] p23_ow;
   p23_wrapper p23_I (
@@ -243,18 +243,18 @@ module basic_mux (
         5'd09:   ow = p09_ow;
         5'd10:   ow = p10_ow;
         5'd11:   ow = p11_ow;
-        5'd11:   ow = p12_ow;
-        5'd11:   ow = p13_ow;
-        5'd11:   ow = p14_ow;
-        5'd11:   ow = p15_ow;
-        5'd11:   ow = p16_ow;
-        5'd11:   ow = p17_ow;
-        5'd11:   ow = p18_ow;
-        5'd11:   ow = p19_ow;
-        5'd11:   ow = p20_ow;
-        5'd11:   ow = p21_ow;
-        5'd11:   ow = p22_ow;
-        5'd11:   ow = p23_ow;
+        5'd12:   ow = p12_ow;
+        5'd13:   ow = p13_ow;
+        5'd14:   ow = p14_ow;
+        5'd15:   ow = p15_ow;
+        5'd16:   ow = p16_ow;
+        5'd17:   ow = p17_ow;
+        5'd18:   ow = p18_ow;
+        5'd19:   ow = p19_ow;
+        5'd20:   ow = p20_ow;
+        5'd21:   ow = p21_ow;
+        5'd22:   ow = p22_ow;
+        5'd23:   ow = p23_ow;
 `endif // RTL_TESTBENCH
         default: ow = 24'b0;
       endcase
