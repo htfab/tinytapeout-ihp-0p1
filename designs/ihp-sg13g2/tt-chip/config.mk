@@ -27,7 +27,7 @@ export ENABLE_PROJECT_20 = 0
 export ENABLE_PROJECT_21 = 0
 export ENABLE_PROJECT_22 = 0
 export ENABLE_PROJECT_23 = 0
-export ENABLE_TT_LOGO = 0
+export ENABLE_TT_LOGO = 1
 
 export SEAL_GDS = $(DESIGN_HOME)/$(PLATFORM)/$(DESIGN_NICKNAME)/macros/sealring/gds/sealring.gds
 
