@@ -73,7 +73,7 @@ ifeq ($(ENABLE_TT_LOGO), 1)
     export ADDITIONAL_LEFS += \
         $(DESIGN_HOME)/$(PLATFORM)/$(DESIGN_NICKNAME)/macros/tt_logo/lef/tt_logo.lef
     export ADDITIONAL_GDS += \
-        $(DESIGN_HOME)/$(PLATFORM)/$(DESIGN_NICKNAME)/macros/tt_logo/gds/tt_logo.gds.gz
+        $(DESIGN_HOME)/$(PLATFORM)/$(DESIGN_NICKNAME)/macros/tt_logo/gds/tt_logo_alt.gds.gz
     export MACRO_PLACEMENT = \
         $(DESIGN_HOME)/$(PLATFORM)/$(DESIGN_NICKNAME)/macro_placement.cfg
 endif
